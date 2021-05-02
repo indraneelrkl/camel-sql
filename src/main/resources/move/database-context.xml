@@ -43,6 +43,13 @@
 	<bean id="employeeRouter"
 		class="com.javainuse.router.EmployeeRouter" />
 
+	<camelContext id="employeeContext"
+		xmlns="http://camel.apache.org/schema/spring">
 
+		<propertyPlaceholder id="placeholder"
+			location="classpath:sql.properties" />
+		<routeBuilder ref="employeeRouter" />
+
+	</camelContext>
 
 </beans>
